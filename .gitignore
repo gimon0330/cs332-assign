@@ -1,0 +1,22 @@
+# 기본적으로 모든 파일과 디렉토리를 무시
+*
+
+# 'src'를 포함하는 상위 프로젝트 디렉토리는 무시하지 않도록 예외 처리
+!/example/
+!/recfun/
+!/objsets/
+!/patmat/
+!/streams/
+!/forcomp/
+
+# 각 프로젝트 폴더 내부에서는 오직 'src' 폴더와 그 하위 내용 전체만 예외 처리
+!/example/src/**
+!/recfun/src/**
+!/funsets/src/*
+!/objsets/src/**
+!/patmat/src/**
+!/streams/src/**
+!/forcomp/src/**
+
+# .gitignore 파일 자체는 버전 관리에 포함
+!.gitignore
