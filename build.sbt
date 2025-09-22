@@ -5,8 +5,8 @@ ThisBuild / scalaVersion := "3.3.1"
 // 각 하위 폴더를 개별 프로젝트로 정의합니다.
 lazy val example = (project in file("example")).settings(name := "example")
 lazy val recfun = (project in file("recfun")).settings(name := "recfun")
-lazy val funsets = (project in file("funsets")).settings(name := "funsets")
-//lazy val objsets = (project in file("objsets")).settings(name := "objsets")
+lazy val funsets = (project in file("funsets")).settings(name := "funsets", libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.17" % "test")
+lazy val objsets = (project in file("objsets")).settings(name := "objsets")
 //lazy val patmat = (project in file("patmat")).settings(name := "patmat")
 //lazy val streams = (project in file("streams")).settings(name := "streams")
 //lazy val forcomp = (project in file("forcomp")).settings(name := "forcomp")
@@ -18,7 +18,7 @@ lazy val root = (project in file("."))
     example,
     recfun,
     funsets,
-    //objsets,
+    objsets,
     //patmat,
     //streams,
     //forcomp
