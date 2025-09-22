@@ -5,6 +5,7 @@
 .scala-build/
 .vscode/
 .* /
+/project/
 
 # Scala/sbt의 컴파일 결과물 폴더 (가장 중요)
 */target/
