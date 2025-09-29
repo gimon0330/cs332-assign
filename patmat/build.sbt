@@ -1,8 +1,6 @@
+scalaVersion := "2.13.14"
 
-val toolkitV = "0.5.0"
-val toolkit = "org.scala-lang" %% "toolkit" % toolkitV
-val toolkitTest = "org.scala-lang" %% "toolkit-test" % toolkitV
-
-ThisBuild / scalaVersion := "3.3.4"
-libraryDependencies += toolkit
-libraryDependencies += (toolkitTest % Test)
+libraryDependencies ++= Seq(
+  "org.scalatest" %% "scalatest" % "3.0.8"  % Test,   // 이미 있음
+  "junit"          % "junit"     % "4.13.2" % Test    // << 추가: org.junit.runner.RunWith 제공
+)

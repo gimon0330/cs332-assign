@@ -159,11 +159,11 @@ object Huffman {
     @tailrec
     def decodeAcc(t: CodeTree, bs: List[Bit], acc: List[Char]): List[Char] = (t, bs) match {
       case (Leaf(c, _), List()) => (c :: acc).reverse
-      case (Leaf(c, _), b :: bs1) => decodeAcc(tree, bs1, c :: acc)
+      case (Leaf(c, _), _) => decodeAcc(tree, bs, c :: acc)
       case (Fork(l, r, _, _), 0 :: bs1) => decodeAcc(l, bs1, acc)
       case (Fork(l, r, _, _), 1 :: bs1) => decodeAcc(r, bs1, acc)
       case (_, List()) => acc.reverse
-      case _ => acc
+      case _ => acc.reverse
     }
 
     decodeAcc(tree, bits, List()) 
@@ -197,6 +197,7 @@ object Huffman {
   def encode(tree: CodeTree)(text: List[Char]): List[Bit] = {
     def encodeAcc(t: CodeTree, c: Char, acc: List[Bit]): List[Bit] = t match {
       case Leaf(ch, _) if ch == c => acc
+      case Leaf(_, _) => List()
       case Fork(l, r, _, _) => 
         val leftPath = encodeAcc(l, c, acc :+ 0)
         if (leftPath.nonEmpty) leftPath
