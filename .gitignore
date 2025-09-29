@@ -12,6 +12,8 @@
 */src/main/scala/common/4
 */project/
 
+*/build.sbt
+
 # 기타 일반적인 무시 파일
 *.class
 *.jar
