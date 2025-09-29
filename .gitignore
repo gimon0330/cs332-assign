@@ -9,7 +9,8 @@
 
 # Scala/sbt의 컴파일 결과물 폴더 (가장 중요)
 */target/
-*/src/main/scala/common/
+*/src/main/scala/common/4
+*/project/
 
 # 기타 일반적인 무시 파일
 *.class
